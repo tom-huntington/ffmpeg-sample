@@ -1,3 +1,10 @@
+Fork Notes
+============
+Exploring the idea that you just write the raw bytes to stdout and then ffmpeg(video)/magick(images) writes them to a file. This way you don't need to set up the piping nonsense, you can do it just with shell scripts. This way it is portable accross programming languages.
+
+TODO: explore the idea of streaming video via ffmpeg realtime. Don't need to wait for the last frame before starting watching the video.
+
+
 ffmpeg sample
 =============
 This in example of writing raw frames to ffmpeg to generate video. It

@@ -9,8 +9,9 @@ int
 main()
 {
 	static uint8_t frame[720][1280][3];
-	int fds[2], x,y,t, status;
-	FILE *ffmpeg;
+	//int fds[2], status;
+	int x,y,t;
+	FILE *ffmpeg = stdout;
 
 	/* Launch ffmpeg */
 
@@ -27,7 +28,7 @@ main()
 		"output.mp4",
 		NULL
 	};
-
+	/*
 	if (pipe(fds) == -1)
 		err(1, "pipe");
 
@@ -43,6 +44,7 @@ main()
 
 	close(fds[0]);
 	ffmpeg = fdopen(fds[1], "w");
+	*/
 
 	/* Write some frames */
 
@@ -61,12 +63,13 @@ main()
 
 	/* Close the handle and let ffmpeg finish */
 
+	/*
 	fclose(ffmpeg);
 
 	if (wait(&status) == -1)
 		err(1, "wait");
 	if (status)
 		errx(1, "ffmpeg exited with status %d\n", status);
-
+	*/
 	return 0;
 }
